@@ -1,4 +1,4 @@
-
+package com.example.cleanlayout.business.domain.state
 
 data class DataState<T>(
     var stateMessage: StateMessage? = null,
