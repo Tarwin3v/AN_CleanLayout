@@ -48,6 +48,18 @@ dependencies {
     implementation(Dependencies.kotlin_reflect)
     implementation(Dependencies.ktx)
 
+    // Dagger
+    implementation(Dependencies.dagger)
+
+    // Annotation Processing
+    kapt(AnnotationProcessing.dagger_compiler)
+
+    // Firebase
+    implementation(Dependencies.firebase_firestore)
+    implementation(Dependencies.firebase_auth)
+    implementation(Dependencies.firebase_analytics)
+    implementation(Dependencies.firebase_crashlytics)
+
     // Support
     implementation(SupportDependencies.appcompat)
     implementation(SupportDependencies.constraintlayout)
