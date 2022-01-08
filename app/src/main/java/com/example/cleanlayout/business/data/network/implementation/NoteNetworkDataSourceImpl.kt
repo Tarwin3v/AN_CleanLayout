@@ -18,7 +18,7 @@ class NoteNetworkDataSourceImpl @Inject constructor(private val firestoreService
 
     override suspend fun deleteDeletedNote(note: Note) = firestoreService.deleteDeletedNote(note)
 
-    override suspend fun getDeletedNote(): List<Note> = firestoreService.getDeletedNote()
+    override suspend fun getDeletedNotes(): List<Note> = firestoreService.getDeletedNote()
 
     override suspend fun deleteAllNotes() = firestoreService.deleteAllNotes()
 
@@ -26,5 +26,5 @@ class NoteNetworkDataSourceImpl @Inject constructor(private val firestoreService
 
     override suspend fun getAllNotes(): List<Note> = firestoreService.getAllNotes()
 
-    override suspend fun insertOrUpdatesNotes(notes: List<Note>) = firestoreService.insertOrUpdatesNotes(notes)
+    override suspend fun insertOrUpdateNotes(notes: List<Note>) = firestoreService.insertOrUpdatesNotes(notes)
 }

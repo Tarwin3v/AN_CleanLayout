@@ -1,6 +1,7 @@
 import dependencies.AndroidTestDependencies
 import dependencies.Dependencies
 import dependencies.SupportDependencies
+import dependencies.TestDependencies
 
 plugins {
     id("com.android.application")
@@ -37,6 +38,12 @@ android {
     kotlinOptions {
         jvmTarget = Java.java_version
     }
+
+    testOptions {
+        unitTests.all {
+            it.useJUnitPlatform()
+        }
+    }
 }
 
 
@@ -72,6 +79,13 @@ dependencies {
     implementation(SupportDependencies.constraintlayout)
     implementation(SupportDependencies.material_design)
     implementation(SupportDependencies.swipe_refresh_layout)
+
+    // Unit test
+    testImplementation(TestDependencies.junit4)
+    testImplementation(TestDependencies.jupiter_params)
+    testImplementation(TestDependencies.jupiter_api)
+    testImplementation(TestDependencies.mockk)
+    testRuntimeOnly(TestDependencies.jupiter_engine)
 
 }
 
