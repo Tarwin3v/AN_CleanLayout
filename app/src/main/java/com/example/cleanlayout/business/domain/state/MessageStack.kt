@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.cleanlayout.util.printLogD
 import kotlinx.android.parcel.IgnoredOnParcel
 
-const val MESSAGE_STACK_BUNDLE_KEY = "com.example.cleanlayout.busisness.domain.state.com.example.cleanlayout.business.domain.state.MessageStack"
+const val MESSAGE_STACK_BUNDLE_KEY = "com.example.cleanlayout.business.domain.state.MessageStack"
 
 class MessageStack: ArrayList<StateMessage>() {
 
