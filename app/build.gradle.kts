@@ -63,6 +63,10 @@ dependencies {
     implementation(Dependencies.firebase_analytics)
     implementation(Dependencies.firebase_crashlytics)
 
+    // Network
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.retrofit_gson)
+
     // Support
     implementation(SupportDependencies.appcompat)
     implementation(SupportDependencies.constraintlayout)

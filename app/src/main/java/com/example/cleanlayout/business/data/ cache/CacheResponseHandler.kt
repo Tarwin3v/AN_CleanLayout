@@ -8,7 +8,7 @@ import com.example.cleanlayout.business.domain.state.StateEvent
 import com.example.cleanlayout.business.domain.state.UIComponentType
 
 abstract class CacheResponseHandler<ViewState, Data>(private val response: CacheResult<Data?>, private val stateEvent: StateEvent?) {
-    suspend fun getResult(): DataState<ViewState>? {
+    fun getResult(): DataState<ViewState> {
         return when (response) {
             is CacheResult.GenericError -> {
                 DataState.error(
