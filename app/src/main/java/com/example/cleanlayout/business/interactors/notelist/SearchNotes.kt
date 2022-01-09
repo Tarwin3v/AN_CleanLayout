@@ -21,7 +21,7 @@ class SearchNotes(private val noteCacheDataSource: NoteCacheDataSource) {
         filterAndOrder: String,
         page: Int,
         stateEvent: StateEvent
-    ): Flow<DataState<NoteListViewState>> = flow {
+    ): Flow<DataState<NoteListViewState>?> = flow {
         val updatedPage = if (page <= 0) 1 else page
         val cacheResult = safeCacheCall(Dispatchers.IO) {
             noteCacheDataSource.searchNotes(query, filterAndOrder, updatedPage)

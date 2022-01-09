@@ -72,7 +72,7 @@ class InsertNewNoteShould {
             title = newNote.title,
             stateEvent = NoteListStateEvent.InsertNewNoteEvent(newNote.title)
         ).collect {
-            assertEquals(it.stateMessage?.response?.message, INSERT_NOTE_SUCCESS)
+            assertEquals(it?.stateMessage?.response?.message, INSERT_NOTE_SUCCESS)
         }
 
         // confirm cache was updated
@@ -94,7 +94,7 @@ class InsertNewNoteShould {
             title = newNote.title,
             stateEvent = NoteListStateEvent.InsertNewNoteEvent(newNote.title)
         ).collect {
-            assertEquals(it.stateMessage?.response?.message, INSERT_NOTE_FAILED)
+            assertEquals(it?.stateMessage?.response?.message, INSERT_NOTE_FAILED)
         }
 
         // confirm cache was not updated
@@ -118,7 +118,7 @@ class InsertNewNoteShould {
             stateEvent = NoteListStateEvent.InsertNewNoteEvent(newNote.title)
         ).collect {
             assert(
-                it.stateMessage?.response?.message
+                it?.stateMessage?.response?.message
                     ?.contains(CacheErrors.CACHE_ERROR_UNKNOWN) ?: false
             )
         }

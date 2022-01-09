@@ -27,7 +27,7 @@ class InsertNewNote(
         id: String? = null,
         title: String,
         stateEvent: StateEvent
-    ): Flow<DataState<NoteListViewState>> = flow {
+    ): Flow<DataState<NoteListViewState>?> = flow {
 
         val newNote = noteFactory.createSingleNote(
             id = id ?: UUID.randomUUID().toString(),
@@ -69,7 +69,7 @@ class InsertNewNote(
         }.getResult()
 
         emit(cacheResponse)
-        updateNetwork(cacheResponse.stateMessage?.response?.message, newNote)
+        updateNetwork(cacheResponse?.stateMessage?.response?.message, newNote)
     }
 
     private suspend fun updateNetwork(cacheResponse: String?, newNote: Note) {

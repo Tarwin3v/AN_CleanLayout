@@ -64,8 +64,8 @@ class SearchNotesShould {
             page = 1,
             stateEvent = NoteListStateEvent.SearchNotesEvent()
         ).collect {
-            assertEquals(it.stateMessage?.response?.message, SEARCH_NOTES_SUCCESS)
-            it.data?.noteList?.let { list ->
+            assertEquals(it?.stateMessage?.response?.message, SEARCH_NOTES_SUCCESS)
+            it?.data?.noteList?.let { list ->
                 results = ArrayList(list)
             }
         }
@@ -93,8 +93,8 @@ class SearchNotesShould {
             page = 1,
             stateEvent = NoteListStateEvent.SearchNotesEvent()
         ).collect {
-            assertEquals(it.stateMessage?.response?.message, SEARCH_NOTES_NO_MATCHING_RESULTS)
-            it.data?.noteList?.let { list ->
+            assertEquals(it?.stateMessage?.response?.message, SEARCH_NOTES_NO_MATCHING_RESULTS)
+            it?.data?.noteList?.let { list ->
                 results = ArrayList(list)
             }
         }
@@ -122,8 +122,8 @@ class SearchNotesShould {
             page = 1,
             stateEvent = NoteListStateEvent.SearchNotesEvent()
         ).collect {
-            assert(it.stateMessage?.response?.message?.contains(CacheErrors.CACHE_ERROR_UNKNOWN) ?: false)
-            it.data?.noteList?.let { list ->
+            assert(it?.stateMessage?.response?.message?.contains(CacheErrors.CACHE_ERROR_UNKNOWN) ?: false)
+            it?.data?.noteList?.let { list ->
                 results = ArrayList(list)
             }
         }
