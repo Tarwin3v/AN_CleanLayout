@@ -86,7 +86,6 @@ dependencies {
     testImplementation(TestDependencies.jupiter_api)
     testImplementation(TestDependencies.mockk)
     testRuntimeOnly(TestDependencies.jupiter_engine)
-
 }
 
 

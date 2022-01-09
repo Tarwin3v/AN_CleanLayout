@@ -43,7 +43,7 @@ class InsertNewNote(
             stateEvent = stateEvent
         ) {
             override fun handleSuccess(resultObj: Long): DataState<NoteListViewState> {
-                return if (!cacheResult.equals(0)) {
+                return if (resultObj > 0) {
                     val viewState = NoteListViewState(newNote = newNote)
                     DataState.data(
                         response = Response(

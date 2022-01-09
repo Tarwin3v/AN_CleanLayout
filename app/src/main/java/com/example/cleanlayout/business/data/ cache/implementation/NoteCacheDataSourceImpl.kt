@@ -14,7 +14,7 @@ class NoteCacheDataSourceImpl @Inject constructor(private val noteDaoService: No
 
     override suspend fun deleteNotes(notes: List<Note>) = noteDaoService.deleteNotes(notes)
 
-    override suspend fun updateNote(primaryKey: String, newTitle: String, newBody: String) =
+    override suspend fun updateNote(primaryKey: String, newTitle: String, newBody: String?) =
         noteDaoService.updateNote(primaryKey, newTitle, newBody)
 
     override suspend fun searchNotes(query: String, filterAndOrder: String, page: Int) = noteDaoService.searchNotes()
